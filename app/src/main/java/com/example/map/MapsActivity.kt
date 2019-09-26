@@ -17,11 +17,13 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import com.google.android.gms.maps.model.PolylineOptions
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
     private var SYDNEY: LatLng? = null
+    private var DESTINATION: LatLng? = null
     val ZOOM_LEVEL = 13f
     lateinit var mLastLocation: Location
     private lateinit var mFusedLocationProviderClient: FusedLocationProviderClient
@@ -111,5 +113,20 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             moveCamera(CameraUpdateFactory.newLatLngZoom(SYDNEY, ZOOM_LEVEL))
             addMarker(SYDNEY?.let { MarkerOptions().position(it) })
         }
+
+        googleMap.setOnMapClickListener(GoogleMap.OnMapClickListener {
+            Log.d("2", it.latitude.toString())
+            Log.d("2", it.longitude.toString())
+            DESTINATION = LatLng(it.latitude, it.longitude)
+            googleMap.clear()
+            googleMap.addPolyline(
+                PolylineOptions()
+                    .add(SYDNEY, DESTINATION)
+                    .width(5F)
+                    .color(R.color.colorPrimaryDark)
+            )
+
+        })
+
     }
 }
