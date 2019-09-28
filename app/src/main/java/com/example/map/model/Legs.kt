@@ -1,4 +1,4 @@
-package com.example.map
+package com.example.map.model
 
 class Legs {
     var summary=""
