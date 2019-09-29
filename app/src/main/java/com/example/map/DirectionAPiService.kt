@@ -1,14 +1,14 @@
 package com.example.map
 
+
+import com.example.map.model.RouteResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 
 interface DirectionAPiService {
-    @GET("json?origin={clatitude},{clongitude}&destination={dlatitude},{dlongitude}&key=AIzaSyBEIDRtKl5v7y-IwW19pp_KtbxasguSYFY")
-    fun requestForRoute(@Path("clatitude") clatitude: Double,
-                        @Path("clongitude") clongitude: Double,
-                        @Path("dlatitude") dlatitude: Double,
-                        @Path("dlongitude") dlongitude: Double): Call<RouteResponse>
+    @GET("json")
+    fun requestForRoute(@Query("origin") clatlon: String,@Query("destination") dlatlon: String,@Query("key") key: String): Call<RouteResponse>
 
 }

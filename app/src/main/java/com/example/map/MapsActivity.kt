@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
-
+var retroCall:RetrofitCall?=null
     private var SYDNEY: LatLng? = null
     private var DESTINATION: LatLng? = null
     val ZOOM_LEVEL = 13f
@@ -40,6 +40,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         myRef.setValue("Hello, World!")
 
+        retroCall= RetrofitCall()
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this)
         getLocationPermission()
 
@@ -132,6 +133,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                     .width(5F)
                     .color(R.color.colorPrimaryDark)
             )
+            val clatlon=SYDNEY?.latitude.toString()+","+SYDNEY?.longitude.toString()
+            val dlatlon=DESTINATION?.latitude.toString()+","+DESTINATION?.longitude.toString()
+
+          retroCall?.getRetroObject(clatlon,dlatlon, getString(R.string.google_maps_key))
+
 
         })
 
