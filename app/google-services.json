@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "696843433391",
+    "firebase_url": "https://ninth-park-177513.firebaseio.com",
+    "project_id": "ninth-park-177513",
+    "storage_bucket": "ninth-park-177513.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:696843433391:android:893fd6941496b83ba46b5a",
+        "android_client_info": {
+          "package_name": "com.example.map"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "696843433391-n3d8h66su1luhlg6ubb1qaopmhtng91l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.map",
+            "certificate_hash": "ed34e4c271369f4e2ffbacc8e0ea7d57d799d5c9"
+          }
+        },
+        {
+          "client_id": "696843433391-8uq1804f524361e7i8u3pg7m8o1vorue.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwda6r-CQlmYl_Ns4L8aQWcpLhpjxKODY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "696843433391-8uq1804f524361e7i8u3pg7m8o1vorue.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
